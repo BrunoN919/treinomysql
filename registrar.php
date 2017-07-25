@@ -1,6 +1,5 @@
 <?php
 	include 'conecta.php';
-	var_dump($_POST);
 	/*==========================INSERE NA TABELA====================================*/
 	if (isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['senha'])) {
 		$nome = $_POST['nome'];

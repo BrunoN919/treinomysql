@@ -10,13 +10,15 @@ if ($val == "1") {
 				"<td style='border :1px solid;'>ID</td>".
 				"<td style='border :1px solid;'>Nome</td>".
 				"<td style='border :1px solid;'>Email</td>".
+				"<td style='border :1px solid;'></td>".
+				"<td style='border :1px solid;'></td>".
 			"</tr><br>".
 			"<tr>".
 				"<td style='border : 1px solid'>".$res["id"]."</td>".
 				"<td style='border : 1px solid'>".$res["nome"]."</td>".
 				"<td style='border : 1px solid'>".$res["email"]."</td>".
-				"<td><a href='editar.php' class='btn btn-primary'>Editar</a></td>".
-				"<td><a href='editar.php' class='btn btn-danger'>Excluir</a></td>".
+				"<td><a href='edita.php' class='btn btn-primary' id=".$res["id"].">Editar nome</a></td>".
+				"<td><a href='excluir.php' class='btn btn-danger' id=".$res["id"].">Excluir</a></td>".
 			"</tr><br>".
 		"</table>";
 	}
