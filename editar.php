@@ -1,18 +1,18 @@
 <?php
 	include 'conecta.php';
-	/*==========================DELETA ITEM NA TABELA====================================*/
-	if (isset($_POST['nome'])) {
+	echo $_GET['id'];
+		/*==========================ALTERA ITEM NA TABELA====================================*/
+	if (isset($_POST['nome'])&& isset($_GET['id'])) {
 		$nome = $_POST['nome'];
-		var_dump($nome);
+		$id = $_GET['id'];
 		if (mysqli_query($conn,"UPDATE login
 								SET nome = '$nome' 
-								WHERE id = 2")){
+								WHERE id = $id")){
 			$msg = "<br>Login editado com sucesso";
 			echo $msg;
 		}else{
 			$msg = "<br>ERRO!<br>";
 			echo $msg;
-			echo mysqli_error($conn);
 		}
 	}
 ?>

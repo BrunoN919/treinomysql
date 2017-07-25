@@ -12,6 +12,7 @@
 		}else{
 			$msg = "<br>ERRO!<br>";
 			echo $msg;
+			print mysqli_error($conn);
 		}
 	}
 ?>

@@ -1,7 +1,9 @@
 <?php
 	include 'conecta.php';
+	$id = $_GET['id'];
+	var_dump($id);
 	/*==========================DELETA ITEM NA TABELA====================================*/
-	if (mysqli_query($conn,"DELETE FROM login WHERE id=2")){
+	if (mysqli_query($conn,"DELETE FROM login WHERE id=$id")){
 		$msg = "<br>Login excluido com sucesso";
 		echo $msg;
 	}else{
