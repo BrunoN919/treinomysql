@@ -10,13 +10,15 @@
 	<link rel="stylesheet" type="text/css" href="css/css.css">
 </head>
 <body>
-	<form method="POST">
-		<label>Email: </label><br>
-		<input type="email" name="email" id="email"><br>
-		<label>Senha: </label><br>
-		<input type="password" name="senha" id="senha"><br><br>
-	</form>
-			<input type="submit" name="logar" id="logar" value="logar" class="btn btn-primary">
-		<a href="registro.php" class="btn btn-success">Registrar</a>
+	<div align="center">
+		<form method="POST">
+			<label>Email: </label><br>
+			<input type="email" name="email" id="email"><br>
+			<label>Senha: </label><br>
+			<input type="password" name="senha" id="senha"><br><br>
+		</form>
+				<input type="submit" name="logar" id="logar" value="logar" class="btn btn-primary">
+			<a href="registro.php" class="btn btn-success">Registrar</a>
+		</div>
 </body>
 </html>
