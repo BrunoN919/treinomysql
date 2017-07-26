@@ -10,7 +10,7 @@ $("document").ready(function(){
 			}
 		});
 	});
-	$("#logar").click(function(){
+	$("#tabela").click(function(){
 		var data = {value : '1'}
 		$.ajax({
 			type : 'POST',

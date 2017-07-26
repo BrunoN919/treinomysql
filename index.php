@@ -11,13 +11,13 @@
 </head>
 <body>
 	<div align="center">
-		<form method="POST">
+		<form method="POST" action="logar.php">
 			<label>Email: </label><br>
 			<input type="email" name="email" id="email"><br>
 			<label>Senha: </label><br>
 			<input type="password" name="senha" id="senha"><br><br>
-		</form>
-				<input type="submit" name="logar" id="logar" value="logar" class="btn btn-primary">
+			<input type="submit" name="logar" id="logar" value="logar" class="btn btn-primary">
+		</form><br>
 			<a href="registro.php" class="btn btn-success">Registrar</a>
 		</div>
 </body>

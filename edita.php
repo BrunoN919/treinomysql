@@ -12,10 +12,13 @@
 <body>
 	<div align="center">
 		<h1>Editar</h1>
-		<?php  echo $_GET['id']; ?>
 		<form method="POST" action="editar.php?id=<?php echo $_GET['id']?>">
 			<label>Nome: </label><br>
 			<input type="text" name="nome" id="nome" valor><br>
+			<label>Email: </label><br>
+			<input type="text" name="email" id="email" valor><br>
+			<label>Senha: </label><br>
+			<input type="text" name="senha" id="senha" valor><br>
 			<input type="submit" name="editar" id="editar" value="Editar" class="btn btn-primary">
 		</form>
 	</div>
