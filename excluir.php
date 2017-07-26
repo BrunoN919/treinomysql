@@ -1,5 +1,6 @@
 <?php
 	include 'conecta.php';
+	require 'verifica.php';
 	$id = $_GET['id'];
 	var_dump($id);
 	/*==========================DELETA ITEM NA TABELA====================================*/

@@ -1,17 +1,27 @@
 <?php
 	include 'conecta.php';
+	session_start();
+	$email = $_POST['email'];
 	$senha = $_POST['senha'];
-	$senha = SHA1('$senha');
+	$senha = md5($senha);
 	if (isset($_POST['email']) && isset($_POST['senha'])){
-		$consulta = mysqli_query($conn,"SELECT email , senha
-			FROM login");
-		echo "<input type='button' value='Listar Tabela' id='tabela'>";
-		// foreach ($consult = mysqli_fetch_assoc($consulta) as $key => $value) {
-		// 	if ($senha == $consult['senha'] && $_POST['email'] == $consult['email']) {
-		// 		echo 'deu certo <br>'; 
-		// 	}
-		// }		
-	}  
+		$sql = "SELECT id,nome,email, senha	
+		FROM login
+		WHERE email = '$email' AND senha = '$senha'";
+		var_dump($sql);
+		$result_email = @mysqli_query($conn,$sql) or die("ERRO NO BANCO DE DADOS"); 
+		$total = @mysqli_num_rows($result_email);
+		if ($total) {
+			$dados = @mysqli_fetch_array($result_email);
+			echo "<br>";
+			var_dump($dados);
+			if (!strcmp($senha , $dados["senha"])) {
+				$_SESSION["id_usuario"]= $dados["id"]; 
+				$_SESSION["nome_usuario"] = stripslashes($dados["nome"]);
+				$_SESSION["email_usuario"] = $dados["email"];
+				header("Location: tabela.php");
+			}
+
+		}
+	} 
 ?>
-<script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
-<script src="js/script.js" type="text/javascript"></script>

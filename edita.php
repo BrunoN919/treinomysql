@@ -1,3 +1,11 @@
+<?php 
+	include 'conecta.php';
+	$id = $_GET['id'];
+	$sql = mysqli_query($conn, "SELECT nome , email 
+								FROM login
+								WHERE id = $id");
+	$res = mysqli_fetch_assoc($sql);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,13 +20,11 @@
 <body>
 	<div align="center">
 		<h1>Editar</h1>
-		<form method="POST" action="editar.php?id=<?php echo $_GET['id']?>">
+		<form method="POST" action="editar.php?id=<?php echo $id?>">
 			<label>Nome: </label><br>
-			<input type="text" name="nome" id="nome" valor><br>
+			<input type="text" name="nome" id="nome" value="<?php echo $res['nome'] ?>"><br>
 			<label>Email: </label><br>
-			<input type="text" name="email" id="email" valor><br>
-			<label>Senha: </label><br>
-			<input type="text" name="senha" id="senha" valor><br>
+			<input type="text" name="email" id="email" value="<?php echo $res['email'] ?>"><br>
 			<input type="submit" name="editar" id="editar" value="Editar" class="btn btn-primary">
 		</form>
 	</div>
